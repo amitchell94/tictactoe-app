@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-public class GameLogic extends AppCompatActivity {
+public class UiLogic extends AppCompatActivity {
 
     private static final String PLAYER_ONE = "X";
     private static final String PLAYER_TWO = "O";

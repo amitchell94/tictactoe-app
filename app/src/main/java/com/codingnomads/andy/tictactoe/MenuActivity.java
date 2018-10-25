@@ -15,11 +15,11 @@ public class MenuActivity extends AppCompatActivity {
 
     public void playComputer(View view) {
         startActivity(new Intent(MenuActivity.this,GameActivity.class)
-                .putExtra("isTwoPlayer",false));
+                .putExtra("gameMode",GameMode.ONE_PLAYER));
     }
 
     public void playTwoPlayer(View view) {
         startActivity(new Intent(MenuActivity.this, GameActivity.class)
-                .putExtra("isTwoPlayer",true));
+                .putExtra("gameMode",GameMode.TWO_PLAYERS));
     }
 }
