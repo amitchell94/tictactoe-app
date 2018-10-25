@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TicTacToeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/winning_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="25dp"
+            android:textSize="30dp"
+            />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <Button
+                android:id="@+id/top_left"
+                android:onClick="topLeftEntry"/>
+
+            <Button
+                android:id="@+id/top_center"
+                android:onClick="topCenterEntry"/>
+
+            <Button
+                android:id="@+id/top_right"
+                android:onClick="topRightEntry"/>
+
+            <Button
+                android:id="@+id/middle_left"
+                android:onClick="middleLeftEntry"/>
+
+            <Button
+                android:id="@+id/middle_center"
+                android:onClick="middleCenterEntry"/>
+
+            <Button
+                android:id="@+id/middle_right"
+                android:onClick="middleRightEntry"/>
+
+            <Button
+                android:id="@+id/bottom_left"
+                android:onClick="bottomLeftEntry"/>
+
+            <Button
+                android:id="@+id/bottom_center"
+                android:onClick="bottomCenterEntry"/>
+
+            <Button
+                android:id="@+id/bottom_right"
+                android:onClick="bottomRightEntry"/>
+        </GridLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="newGame"
+            android:text="New Game"
+            android:padding="25dp"/>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
