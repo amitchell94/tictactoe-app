@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tic-Tac-Toe"
+        android:textSize="30dp"
+        android:padding="30dp"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Play Two Player"
+        android:padding="30dp"
+        android:textSize="20dp"
+        android:onClick="playTwoPlayer"/>
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Play Computer"
+        android:padding="30dp"
+        android:textSize="18dp"
+        android:onClick="playComputer"/>
+
+</LinearLayout>
+</android.support.constraint.ConstraintLayout>

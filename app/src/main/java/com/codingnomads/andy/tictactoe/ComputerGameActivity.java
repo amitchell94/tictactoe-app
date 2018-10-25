@@ -9,11 +9,10 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class TicTacToeActivity extends AppCompatActivity {
-
-
+public class ComputerGameActivity extends AppCompatActivity {
     public static final String HUMAN = "X";
     public static final String AI = "O";
+
     String[][] gameBoard;
     Button[][] buttons;
 
