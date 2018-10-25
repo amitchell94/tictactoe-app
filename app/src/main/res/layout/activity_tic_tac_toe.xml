@@ -25,50 +25,105 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:columnCount="3"
-            android:rowCount="3">
+            >
 
             <Button
                 android:id="@+id/top_left"
-                android:onClick="topLeftEntry"/>
+                android:onClick="topLeftEntry"
+                android:height="100dp"
+                android:layout_width="@dimen/boardSquareWidth"
+                android:layout_height="@dimen/boardSquareHeight"
+                android:textSize="40dp"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:background="#BBBBBB"/>
 
             <Button
                 android:id="@+id/top_center"
-                android:onClick="topCenterEntry"/>
+                android:onClick="topCenterEntry"
+                android:layout_width="@dimen/boardSquareWidth"
+                android:layout_height="@dimen/boardSquareHeight"
+                android:background="#E5E5E5"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="40dp"/>
 
             <Button
                 android:id="@+id/top_right"
-                android:onClick="topRightEntry"/>
+                android:onClick="topRightEntry"
+                android:layout_width="@dimen/boardSquareWidth"
+                android:layout_height="@dimen/boardSquareHeight"
+                android:background="#BBBBBB"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="40dp"/>
 
             <Button
                 android:id="@+id/middle_left"
-                android:onClick="middleLeftEntry"/>
+                android:onClick="middleLeftEntry"
+                android:layout_width="@dimen/boardSquareWidth"
+                android:layout_height="@dimen/boardSquareHeight"
+                android:background="#E5E5E5"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="40dp"/>
 
             <Button
                 android:id="@+id/middle_center"
-                android:onClick="middleCenterEntry"/>
+                android:onClick="middleCenterEntry"
+                android:layout_width="@dimen/boardSquareWidth"
+                android:layout_height="@dimen/boardSquareHeight"
+                android:background="#BBBBBB"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="40dp"/>
 
             <Button
                 android:id="@+id/middle_right"
-                android:onClick="middleRightEntry"/>
+                android:onClick="middleRightEntry"
+                android:layout_width="@dimen/boardSquareWidth"
+                android:layout_height="@dimen/boardSquareHeight"
+                android:background="#E5E5E5"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="40dp"/>
 
             <Button
                 android:id="@+id/bottom_left"
-                android:onClick="bottomLeftEntry"/>
+                android:onClick="bottomLeftEntry"
+                android:layout_width="@dimen/boardSquareWidth"
+                android:layout_height="@dimen/boardSquareHeight"
+                android:background="#BBBBBB"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="40dp"/>
 
             <Button
                 android:id="@+id/bottom_center"
-                android:onClick="bottomCenterEntry"/>
+                android:onClick="bottomCenterEntry"
+                android:layout_width="@dimen/boardSquareWidth"
+                android:layout_height="@dimen/boardSquareHeight"
+                android:background="#E5E5E5"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="40dp"/>
 
             <Button
                 android:id="@+id/bottom_right"
-                android:onClick="bottomRightEntry"/>
+                android:onClick="bottomRightEntry"
+                android:layout_width="@dimen/boardSquareWidth"
+                android:layout_height="@dimen/boardSquareHeight"
+                android:background="#BBBBBB"
+                android:fontFamily="casual"
+                android:textSize="40dp"/>
+
         </GridLayout>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="newGame"
             android:text="New Game"
-            android:padding="25dp"/>
+            android:padding="25dp" />
 
     </LinearLayout>
 
