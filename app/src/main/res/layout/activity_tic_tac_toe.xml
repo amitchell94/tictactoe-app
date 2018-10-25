@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ComputerGameActivity">
+    tools:context=".GameActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
 
             <Button
                 android:id="@+id/top_left"
-                android:onClick="topLeftEntry"
+                android:onClick="userEntry"
                 android:height="100dp"
                 android:layout_width="@dimen/boardSquareWidth"
                 android:layout_height="@dimen/boardSquareHeight"
@@ -40,7 +40,7 @@
 
             <Button
                 android:id="@+id/top_center"
-                android:onClick="topCenterEntry"
+                android:onClick="userEntry"
                 android:layout_width="@dimen/boardSquareWidth"
                 android:layout_height="@dimen/boardSquareHeight"
                 android:background="#E5E5E5"
@@ -50,7 +50,7 @@
 
             <Button
                 android:id="@+id/top_right"
-                android:onClick="topRightEntry"
+                android:onClick="userEntry"
                 android:layout_width="@dimen/boardSquareWidth"
                 android:layout_height="@dimen/boardSquareHeight"
                 android:background="#BBBBBB"
@@ -60,7 +60,7 @@
 
             <Button
                 android:id="@+id/middle_left"
-                android:onClick="middleLeftEntry"
+                android:onClick="userEntry"
                 android:layout_width="@dimen/boardSquareWidth"
                 android:layout_height="@dimen/boardSquareHeight"
                 android:background="#E5E5E5"
@@ -70,7 +70,7 @@
 
             <Button
                 android:id="@+id/middle_center"
-                android:onClick="middleCenterEntry"
+                android:onClick="userEntry"
                 android:layout_width="@dimen/boardSquareWidth"
                 android:layout_height="@dimen/boardSquareHeight"
                 android:background="#BBBBBB"
@@ -80,7 +80,7 @@
 
             <Button
                 android:id="@+id/middle_right"
-                android:onClick="middleRightEntry"
+                android:onClick="userEntry"
                 android:layout_width="@dimen/boardSquareWidth"
                 android:layout_height="@dimen/boardSquareHeight"
                 android:background="#E5E5E5"
@@ -90,7 +90,7 @@
 
             <Button
                 android:id="@+id/bottom_left"
-                android:onClick="bottomLeftEntry"
+                android:onClick="userEntry"
                 android:layout_width="@dimen/boardSquareWidth"
                 android:layout_height="@dimen/boardSquareHeight"
                 android:background="#BBBBBB"
@@ -100,7 +100,7 @@
 
             <Button
                 android:id="@+id/bottom_center"
-                android:onClick="bottomCenterEntry"
+                android:onClick="userEntry"
                 android:layout_width="@dimen/boardSquareWidth"
                 android:layout_height="@dimen/boardSquareHeight"
                 android:background="#E5E5E5"
@@ -110,7 +110,7 @@
 
             <Button
                 android:id="@+id/bottom_right"
-                android:onClick="bottomRightEntry"
+                android:onClick="userEntry"
                 android:layout_width="@dimen/boardSquareWidth"
                 android:layout_height="@dimen/boardSquareHeight"
                 android:background="#BBBBBB"

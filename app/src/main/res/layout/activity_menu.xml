@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:text="Play Two Player"
         android:padding="30dp"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:onClick="playTwoPlayer"/>
     <Button
         android:layout_width="250dp"

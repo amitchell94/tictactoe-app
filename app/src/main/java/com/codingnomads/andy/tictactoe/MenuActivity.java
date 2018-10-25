@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
 import android.view.View;
 
 public class MenuActivity extends AppCompatActivity {
@@ -15,10 +14,12 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void playComputer(View view) {
-        startActivity(new Intent(MenuActivity.this,ComputerGameActivity.class));
+        startActivity(new Intent(MenuActivity.this,GameActivity.class)
+                .putExtra("isTwoPlayer",false));
     }
 
     public void playTwoPlayer(View view) {
-        startActivity(new Intent(MenuActivity.this, TwoPlayerGameActivity.class));
+        startActivity(new Intent(MenuActivity.this, GameActivity.class)
+                .putExtra("isTwoPlayer",true));
     }
 }

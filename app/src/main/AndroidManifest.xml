@@ -16,11 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".TwoPlayerGameActivity">
-
-        </activity>
-        <activity android:name=".ComputerGameActivity">
+        <activity android:name=".GameActivity">
 
         </activity>
     </application>
