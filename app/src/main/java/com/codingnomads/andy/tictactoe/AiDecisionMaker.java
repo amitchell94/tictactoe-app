@@ -3,20 +3,19 @@ package com.codingnomads.andy.tictactoe;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_ONE_LETTER;
+import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_TWO_LETTER;
+
 public class AiDecisionMaker {
-    private static final String AI_PLAYER = "O";
-    private static final String HUMAN_PLAYER = "X";
-
-
     public AiMove getBestMove(String[][] gameboard, String player) {
         AiMove bestMove = new AiMove();
 
         List<AiMove> potentialMoves = getPotentialMoves(gameboard);
 
-        if (checkWin(gameboard, HUMAN_PLAYER)) {
+        if (checkWin(gameboard, PLAYER_TWO_LETTER)) {
             bestMove.setScore(-10);
             return bestMove;
-        } else if (checkWin(gameboard, AI_PLAYER)) {
+        } else if (checkWin(gameboard, PLAYER_ONE_LETTER)) {
             bestMove.setScore(10);
             return bestMove;
         } else if (potentialMoves.size() == 0) {
@@ -30,10 +29,10 @@ public class AiDecisionMaker {
 
             gameboard[potentialMove.getFirstIndex()][potentialMove.getSecondIndex()] = player;
 
-            if(player.equals(AI_PLAYER)) {
-                potentialMove.setScore(getBestMove(gameboard, HUMAN_PLAYER).getScore());
+            if(player.equals(PLAYER_ONE_LETTER)) {
+                potentialMove.setScore(getBestMove(gameboard, PLAYER_TWO_LETTER).getScore());
             } else {
-                potentialMove.setScore(getBestMove(gameboard, AI_PLAYER).getScore());
+                potentialMove.setScore(getBestMove(gameboard, PLAYER_ONE_LETTER).getScore());
             }
 
             gameboard[potentialMove.getFirstIndex()][potentialMove.getSecondIndex()] = "";
@@ -41,7 +40,7 @@ public class AiDecisionMaker {
             moves.add(potentialMove);
         }
 
-        if(player.equals(AI_PLAYER)) {
+        if(player.equals(PLAYER_ONE_LETTER)) {
             int bestScore = -1000;
             for (AiMove move : moves) {
                 if (move.getScore() > bestScore) {

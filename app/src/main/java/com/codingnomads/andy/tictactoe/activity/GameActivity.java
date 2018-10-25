@@ -1,4 +1,4 @@
-package com.codingnomads.andy.tictactoe;
+package com.codingnomads.andy.tictactoe.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,9 +6,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.codingnomads.andy.tictactoe.GameMode;
+import com.codingnomads.andy.tictactoe.activity.strategy.GameStrategy;
+import com.codingnomads.andy.tictactoe.activity.strategy.OnePlayerStrategy;
+import com.codingnomads.andy.tictactoe.Player;
+import com.codingnomads.andy.tictactoe.R;
+import com.codingnomads.andy.tictactoe.activity.strategy.TwoPlayerStrategy;
+
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_ONE_LETTER;
+import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_TWO_LETTER;
 import static com.codingnomads.andy.tictactoe.UiLogic.checkDraw;
 import static com.codingnomads.andy.tictactoe.UiLogic.checkWin;
 import static com.codingnomads.andy.tictactoe.UiLogic.disableButtons;
@@ -17,13 +26,11 @@ import static com.codingnomads.andy.tictactoe.UiLogic.getButtonCoordinate;
 import static com.codingnomads.andy.tictactoe.UiLogic.setButtonTexts;
 
 public class GameActivity extends AppCompatActivity {
-    public static final String PLAYER_ONE = "X";
-    public static final String PLAYER_TWO = "O";
 
-    private Map<GameMode, GameStrategy > gameStrategyMap = new HashMap<>();
+    private Map<GameMode, GameStrategy> gameStrategyMap = new HashMap<>();
     private GameStrategy gameStrategy;
     private GameMode gameMode;
-    private String currentPlayer;
+    private Player currentPlayer;
 
     String[][] gameBoard;
     Button[][] buttons;
@@ -36,14 +43,13 @@ public class GameActivity extends AppCompatActivity {
         gameStrategyMap.put(GameMode.ONE_PLAYER, new OnePlayerStrategy());
         gameStrategyMap.put(GameMode.TWO_PLAYERS, new TwoPlayerStrategy());
 
-
         gameBoard = new String[3][3];
         buttons = new Button[3][3];
 
         Bundle extras = getIntent().getExtras();
-        if(extras != null) {
-            gameMode = (GameMode)extras.get("gameMode");
-                gameStrategy = gameStrategyMap.get(gameMode);
+        if (extras != null) {
+            gameMode = (GameMode) extras.get("gameMode");
+            gameStrategy = gameStrategyMap.get(gameMode);
         }
 
         initialiseButtons();
@@ -67,7 +73,7 @@ public class GameActivity extends AppCompatActivity {
                 buttons[i][j].setClickable(true);
             }
         }
-        currentPlayer = PLAYER_ONE;
+        currentPlayer = Player.PLAYER_ONE;
         setText(gameStrategy.getStartingText(currentPlayer));
     }
 
@@ -80,28 +86,32 @@ public class GameActivity extends AppCompatActivity {
     public void userEntry(View view) {
 
         int buttonId = view.getId();
-        int[] coordinates = getButtonCoordinate(buttons,buttonId);
-
+        int[] coordinates = getButtonCoordinate(buttons, buttonId);
         setUserInput(coordinates[0], coordinates[1], currentPlayer);
     }
 
-    private void setUserInput(int rowNo, int columnNo, String letter) {
+    private void setUserInput(int rowNo, int columnNo, Player player) {
         disableButtons(buttons);
 
-        if (!PLAYER_ONE.equals(gameBoard[rowNo][columnNo]) &&
-                !PLAYER_TWO.equals(gameBoard[rowNo][columnNo])) {
-            gameBoard[rowNo][columnNo] = letter;
+        if (!PLAYER_ONE_LETTER.equals(gameBoard[rowNo][columnNo]) &&
+                !PLAYER_TWO_LETTER.equals(gameBoard[rowNo][columnNo])) {
+
+            if (player == Player.PLAYER_ONE) {
+                gameBoard[rowNo][columnNo] = PLAYER_ONE_LETTER;
+            } else {
+                gameBoard[rowNo][columnNo] = PLAYER_TWO_LETTER;
+            }
         } else {
             enableButtons(buttons);
             return;
         }
-        setButtonTexts(buttons,gameBoard);
+        setButtonTexts(buttons, gameBoard);
 
         currentPlayer = gameStrategy.switchPlayer(currentPlayer);
         setText(gameStrategy.getNextPlayerText(currentPlayer));
 
-        if (checkWin(PLAYER_ONE, gameBoard)) {
-            setText(gameStrategy.getPlayerOneWinText(PLAYER_ONE));
+        if (checkWin(PLAYER_ONE_LETTER, gameBoard)) {
+            setText(gameStrategy.getPlayerOneWinText());
             disableButtons(buttons);
             return;
         }
@@ -111,10 +121,10 @@ public class GameActivity extends AppCompatActivity {
             disableButtons(buttons);
             return;
         }
-        gameBoard = gameStrategy.computerMove(gameBoard, PLAYER_TWO, buttons);
+        gameBoard = gameStrategy.computerMove(gameBoard, PLAYER_TWO_LETTER, buttons);
 
-        if (checkWin(PLAYER_TWO, gameBoard)) {
-            setText(gameStrategy.getPlayerTwoWinText(PLAYER_TWO));
+        if (checkWin(PLAYER_TWO_LETTER, gameBoard)) {
+            setText(gameStrategy.getPlayerTwoWinText());
             disableButtons(buttons);
             return;
         }

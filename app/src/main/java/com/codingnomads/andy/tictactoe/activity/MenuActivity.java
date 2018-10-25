@@ -1,10 +1,13 @@
-package com.codingnomads.andy.tictactoe;
+package com.codingnomads.andy.tictactoe.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import com.codingnomads.andy.tictactoe.GameMode;
+import com.codingnomads.andy.tictactoe.R;
 
 public class MenuActivity extends AppCompatActivity {
     @Override

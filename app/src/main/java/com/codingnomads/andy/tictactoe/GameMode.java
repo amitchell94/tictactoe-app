@@ -1,6 +1,6 @@
 package com.codingnomads.andy.tictactoe;
 
-enum GameMode {
+public enum GameMode {
     ONE_PLAYER,
     TWO_PLAYERS
 }

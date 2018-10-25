@@ -1,15 +1,16 @@
-package com.codingnomads.andy.tictactoe;
+package com.codingnomads.andy.tictactoe.activity.strategy;
 
 import android.widget.Button;
 
-import static com.codingnomads.andy.tictactoe.UiLogic.checkWin;
-import static com.codingnomads.andy.tictactoe.UiLogic.disableButtons;
-import static com.codingnomads.andy.tictactoe.UiLogic.enableButtons;
+import com.codingnomads.andy.tictactoe.AiDecisionMaker;
+import com.codingnomads.andy.tictactoe.AiMove;
+import com.codingnomads.andy.tictactoe.Player;
+
 import static com.codingnomads.andy.tictactoe.UiLogic.setButtonTexts;
 
-class OnePlayerStrategy implements GameStrategy {
+public class OnePlayerStrategy implements GameStrategy {
     @Override
-    public String getStartingText(String player) {
+    public String getStartingText(Player player) {
         return "Let's play!";
     }
 
@@ -24,22 +25,22 @@ class OnePlayerStrategy implements GameStrategy {
     }
 
     @Override
-    public String getPlayerOneWinText(String playerOne) {
+    public String getPlayerOneWinText() {
         return "You win!";
     }
 
     @Override
-    public String getPlayerTwoWinText(String playerTwo) {
+    public String getPlayerTwoWinText() {
         return "You lose";
     }
 
     @Override
-    public String switchPlayer(String currentPlayer) {
+    public Player switchPlayer(Player currentPlayer) {
         return currentPlayer;
     }
 
     @Override
-    public String getNextPlayerText(String currentPlayer) {
+    public String getNextPlayerText(Player currentPlayer) {
         return "Let's play!";
     }
 }
