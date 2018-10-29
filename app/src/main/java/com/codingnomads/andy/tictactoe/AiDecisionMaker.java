@@ -65,7 +65,8 @@ public class AiDecisionMaker {
         List<AiMove> potentialMoveList = new ArrayList<>();
         for (int i = 0; i < gameboard.length; i++) {
             for (int j = 0; j < gameboard[i].length; j++) {
-                if(!"X".equals(gameboard[i][j]) && !"O".equals(gameboard[i][j])) {
+                if(!PLAYER_ONE_LETTER.equals(gameboard[i][j]) &&
+                        !PLAYER_TWO_LETTER.equals(gameboard[i][j])) {
                     AiMove aiMove = new AiMove();
                     aiMove.setFirstIndex(i);
                     aiMove.setSecondIndex(j);
