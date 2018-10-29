@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">TicTacToe</string>
+    <string name="starting_text">Let\'s play!</string>
+    <string name="player_wins_text">You win!</string>
+    <string name="player_loses_text">You lose!</string>
+    <string name="draw_text">It\'s a draw</string>
+    <string name="to_start_first">" to start first"</string>
+    <string name="to_play">" to play"</string>
+    <string name="two_player_wins_text">" wins!"</string>
+    <string name="two_player_loses_text">" loses!"</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Impossible</string>
 </resources>

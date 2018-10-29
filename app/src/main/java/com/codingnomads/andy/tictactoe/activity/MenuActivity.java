@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.codingnomads.andy.tictactoe.GameMode;
 import com.codingnomads.andy.tictactoe.R;
+import com.codingnomads.andy.tictactoe.SelectDificulty;
 
 public class MenuActivity extends AppCompatActivity {
     @Override
@@ -17,8 +18,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void playComputer(View view) {
-        startActivity(new Intent(MenuActivity.this,GameActivity.class)
-                .putExtra("gameMode",GameMode.ONE_PLAYER));
+        SelectDificulty selectDificulty = new SelectDificulty();
+        selectDificulty.show(getSupportFragmentManager(), "NoticeDialogFragmen");
     }
 
     public void playTwoPlayer(View view) {

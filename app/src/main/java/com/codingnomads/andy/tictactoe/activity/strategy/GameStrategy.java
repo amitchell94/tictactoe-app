@@ -7,7 +7,7 @@ import com.codingnomads.andy.tictactoe.Player;
 public interface GameStrategy {
     String getStartingText(Player player);
 
-    String[][] computerMove(String[][] gameBoard, String playerTwo, Button[][] buttons);
+    String[][] computerMove(String[][] gameBoard, String playerTwo, Button[][] buttons, int difficultyLevel);
 
     String getPlayerOneWinText();
 

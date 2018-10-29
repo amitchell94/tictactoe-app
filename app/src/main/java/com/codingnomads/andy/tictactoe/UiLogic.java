@@ -4,10 +4,10 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-public class UiLogic extends AppCompatActivity {
+import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_ONE_LETTER;
+import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_TWO_LETTER;
 
-    private static final String PLAYER_ONE = "X";
-    private static final String PLAYER_TWO = "O";
+public class UiLogic extends AppCompatActivity {
 
     public static void disableButtons(Button[][] buttons) {
         for (int i = 0; i < buttons.length; i++) {
@@ -41,9 +41,9 @@ public class UiLogic extends AppCompatActivity {
         for (int i = 0; i < gameBoard.length; i++) {
             for (int j = 0; j < gameBoard[i].length; j++) {
                 buttons[i][j].setText(gameBoard[i][j]);
-                if(PLAYER_ONE.equals(gameBoard[i][j])) {
+                if(PLAYER_ONE_LETTER.equals(gameBoard[i][j])) {
                     buttons[i][j].setTextColor(Color.BLUE);
-                } else if(PLAYER_TWO.equals(gameBoard[i][j])) {
+                } else if(PLAYER_TWO_LETTER.equals(gameBoard[i][j])) {
                     buttons[i][j].setTextColor(Color.rgb(186,24,24));
                 }
             }
@@ -105,7 +105,7 @@ public class UiLogic extends AppCompatActivity {
         boolean isDraw = true;
         for (int i = 0; i < gameBoard.length; i++) {
             for (int j = 0; j < gameBoard[i].length; j++) {
-                isDraw = isDraw && (PLAYER_TWO.equals(gameBoard[i][j]) || PLAYER_ONE.equals(gameBoard[i][j]));
+                isDraw = isDraw && (PLAYER_TWO_LETTER.equals(gameBoard[i][j]) || PLAYER_ONE_LETTER.equals(gameBoard[i][j]));
             }
         }
         return isDraw;

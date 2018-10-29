@@ -18,12 +18,7 @@ import java.util.Map;
 
 import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_ONE_LETTER;
 import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_TWO_LETTER;
-import static com.codingnomads.andy.tictactoe.UiLogic.checkDraw;
-import static com.codingnomads.andy.tictactoe.UiLogic.checkWin;
-import static com.codingnomads.andy.tictactoe.UiLogic.disableButtons;
-import static com.codingnomads.andy.tictactoe.UiLogic.enableButtons;
-import static com.codingnomads.andy.tictactoe.UiLogic.getButtonCoordinate;
-import static com.codingnomads.andy.tictactoe.UiLogic.setButtonTexts;
+import static com.codingnomads.andy.tictactoe.UiLogic.*;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -31,6 +26,7 @@ public class GameActivity extends AppCompatActivity {
     private GameStrategy gameStrategy;
     private GameMode gameMode;
     private Player currentPlayer;
+    private int difficultyLevel;
 
     String[][] gameBoard;
     Button[][] buttons;
@@ -40,8 +36,8 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tic_tac_toe);
 
-        gameStrategyMap.put(GameMode.ONE_PLAYER, new OnePlayerStrategy());
-        gameStrategyMap.put(GameMode.TWO_PLAYERS, new TwoPlayerStrategy());
+        gameStrategyMap.put(GameMode.ONE_PLAYER, new OnePlayerStrategy(getApplicationContext()));
+        gameStrategyMap.put(GameMode.TWO_PLAYERS, new TwoPlayerStrategy(getApplicationContext()));
 
         gameBoard = new String[3][3];
         buttons = new Button[3][3];
@@ -50,9 +46,11 @@ public class GameActivity extends AppCompatActivity {
         if (extras != null) {
             gameMode = (GameMode) extras.get("gameMode");
             gameStrategy = gameStrategyMap.get(gameMode);
+            difficultyLevel = extras.getInt("difficultyLevel");
         }
 
         initialiseButtons();
+        startNewGame();
     }
 
     private void initialiseButtons() {
@@ -65,16 +63,6 @@ public class GameActivity extends AppCompatActivity {
         buttons[2][0] = findViewById(R.id.bottom_left);
         buttons[2][1] = findViewById(R.id.bottom_center);
         buttons[2][2] = findViewById(R.id.bottom_right);
-
-        for (int i = 0; i < buttons.length; i++) {
-            for (int j = 0; j < buttons[i].length; j++) {
-                gameBoard[i][j] = "";
-                buttons[i][j].setText("");
-                buttons[i][j].setClickable(true);
-            }
-        }
-        currentPlayer = Player.PLAYER_ONE;
-        setText(gameStrategy.getStartingText(currentPlayer));
     }
 
     public void setText(String text) {
@@ -117,11 +105,11 @@ public class GameActivity extends AppCompatActivity {
         }
 
         if (checkDraw(gameBoard)) {
-            setText("It's a draw!");
+            setText(getString(R.string.draw_text));
             disableButtons(buttons);
             return;
         }
-        gameBoard = gameStrategy.computerMove(gameBoard, PLAYER_TWO_LETTER, buttons);
+        gameBoard = gameStrategy.computerMove(gameBoard, PLAYER_TWO_LETTER, buttons, difficultyLevel);
 
         if (checkWin(PLAYER_TWO_LETTER, gameBoard)) {
             setText(gameStrategy.getPlayerTwoWinText());
@@ -133,6 +121,18 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void newGame(View view) {
-        initialiseButtons();
+        startNewGame();
+    }
+
+    public void startNewGame() {
+        for (int i = 0; i < buttons.length; i++) {
+            for (int j = 0; j < buttons[i].length; j++) {
+                gameBoard[i][j] = "";
+                buttons[i][j].setText("");
+                buttons[i][j].setClickable(true);
+            }
+        }
+        currentPlayer = Player.PLAYER_ONE;
+        setText(gameStrategy.getStartingText(currentPlayer));
     }
 }
