@@ -34,10 +34,6 @@ End with an example of getting some data out of the system or using it for a lit
 
 No automated test included in this version.
 
-### Break down into end to end tests
-
-No end to end test included in this version.
-
 ## Deployment
 
 This application can be deployed by building the APK file.
