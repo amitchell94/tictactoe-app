@@ -10,11 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+For this application you will need a minimum of Android API level 28.
 
 ### Installing
 
@@ -36,27 +32,15 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+No automated test included in this version.
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+No end to end test included in this version.
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+This application can be deployed by building the APK file.
 
 ## Built With
 
@@ -72,7 +56,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Andy Mitchell** - *Initial work* - [Website](https://github.com/amitchell94)
+* **Andy Mitchell** - *Initial work* - [GitHub](https://github.com/amitchell94)
 
 ## License
 
