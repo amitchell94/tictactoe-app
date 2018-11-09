@@ -19,13 +19,9 @@ For this application you will need a minimum of Android API level 28.
 
 After cloning the repository to your local machine, you can import the project into Android Studio.
 
-## Running the tests
-
-No automated test included in this version.
-
 ## Deployment
 
-This application can be deployed by building the APK file.
+This application can be deployed by building the APK file and installing it on an Android phone or tablet a minimum of APi level 28.
 
 ## Built With
 
