@@ -40,82 +40,35 @@
 
             <Button
                 android:id="@+id/top_center"
-                android:onClick="userEntry"
-                android:layout_width="@dimen/boardSquareWidth"
-                android:layout_height="@dimen/boardSquareHeight"
-                android:background="#E5E5E5"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:textSize="40dp"/>
+                style="@style/button_dark"/>
 
             <Button
                 android:id="@+id/top_right"
-                android:onClick="userEntry"
-                android:layout_width="@dimen/boardSquareWidth"
-                android:layout_height="@dimen/boardSquareHeight"
-                android:background="#BBBBBB"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:textSize="40dp"/>
+                style="@style/button_light"/>
 
             <Button
                 android:id="@+id/middle_left"
-                android:onClick="userEntry"
-                android:layout_width="@dimen/boardSquareWidth"
-                android:layout_height="@dimen/boardSquareHeight"
-                android:background="#E5E5E5"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:textSize="40dp"/>
+                style="@style/button_dark"/>
 
             <Button
                 android:id="@+id/middle_center"
-                android:onClick="userEntry"
-                android:layout_width="@dimen/boardSquareWidth"
-                android:layout_height="@dimen/boardSquareHeight"
-                android:background="#BBBBBB"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:textSize="40dp"/>
+                style="@style/button_light"/>
 
             <Button
                 android:id="@+id/middle_right"
-                android:onClick="userEntry"
-                android:layout_width="@dimen/boardSquareWidth"
-                android:layout_height="@dimen/boardSquareHeight"
-                android:background="#E5E5E5"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:textSize="40dp"/>
+                style="@style/button_dark"/>
 
             <Button
                 android:id="@+id/bottom_left"
-                android:onClick="userEntry"
-                android:layout_width="@dimen/boardSquareWidth"
-                android:layout_height="@dimen/boardSquareHeight"
-                android:background="#BBBBBB"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:textSize="40dp"/>
+                style="@style/button_light"/>
 
             <Button
                 android:id="@+id/bottom_center"
-                android:onClick="userEntry"
-                android:layout_width="@dimen/boardSquareWidth"
-                android:layout_height="@dimen/boardSquareHeight"
-                android:background="#E5E5E5"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:textSize="40dp"/>
+                style="@style/button_dark"/>
 
             <Button
                 android:id="@+id/bottom_right"
-                android:onClick="userEntry"
-                android:layout_width="@dimen/boardSquareWidth"
-                android:layout_height="@dimen/boardSquareHeight"
-                android:background="#BBBBBB"
-                android:fontFamily="casual"
-                android:textSize="40dp"/>
+                style="@style/button_light"/>
 
         </GridLayout>
         <Button
