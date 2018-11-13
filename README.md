@@ -1,4 +1,4 @@
-# Simple Tic Tac Toe Application
+# Simple Tic Tac Toe Android Application
 
 This is a simple Tic Tac Toe Android application which allows users to play a local two player mode and a single player mode against a computer.
 
