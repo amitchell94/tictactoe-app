@@ -1,4 +1,4 @@
-package com.codingnomads.andy.tictactoe;
+package com.codingnomads.andy.tictactoe.players;
 
 public class PlayerLetters {
     public static final String PLAYER_ONE_LETTER = "X";

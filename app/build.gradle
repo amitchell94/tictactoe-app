@@ -3,12 +3,12 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.codingnomads.andy.tictactoe"
-        minSdkVersion 28
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        applicationId 'com.codingnomads.andy.tictactoe'
+        minSdkVersion 16
+        versionCode 3
+        versionName "1.0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        targetSdkVersion 26
     }
     buildTypes {
         release {

@@ -2,7 +2,7 @@ package com.codingnomads.andy.tictactoe.activity.strategy;
 
 import android.widget.Button;
 
-import com.codingnomads.andy.tictactoe.Player;
+import com.codingnomads.andy.tictactoe.players.Player;
 
 public interface GameStrategy {
     String getStartingText(Player player);

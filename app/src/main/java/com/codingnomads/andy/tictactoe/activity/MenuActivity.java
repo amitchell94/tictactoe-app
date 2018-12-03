@@ -6,9 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.codingnomads.andy.tictactoe.GameMode;
+import com.codingnomads.andy.tictactoe.game.GameMode;
 import com.codingnomads.andy.tictactoe.R;
-import com.codingnomads.andy.tictactoe.SelectDificulty;
+import com.codingnomads.andy.tictactoe.ui.SelectDifficulty;
 
 public class MenuActivity extends AppCompatActivity {
     @Override
@@ -18,7 +18,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void playComputer(View view) {
-        SelectDificulty selectDificulty = new SelectDificulty();
+        SelectDifficulty selectDificulty = new SelectDifficulty();
         selectDificulty.show(getSupportFragmentManager(), "NoticeDialogFragmen");
     }
 

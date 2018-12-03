@@ -6,19 +6,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.codingnomads.andy.tictactoe.GameMode;
+import com.codingnomads.andy.tictactoe.game.GameMode;
 import com.codingnomads.andy.tictactoe.activity.strategy.GameStrategy;
 import com.codingnomads.andy.tictactoe.activity.strategy.OnePlayerStrategy;
-import com.codingnomads.andy.tictactoe.Player;
+import com.codingnomads.andy.tictactoe.players.Player;
 import com.codingnomads.andy.tictactoe.R;
 import com.codingnomads.andy.tictactoe.activity.strategy.TwoPlayerStrategy;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_ONE_LETTER;
-import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_TWO_LETTER;
-import static com.codingnomads.andy.tictactoe.UiLogic.*;
+import static com.codingnomads.andy.tictactoe.game.GameLogic.checkDraw;
+import static com.codingnomads.andy.tictactoe.game.GameLogic.checkWin;
+import static com.codingnomads.andy.tictactoe.players.PlayerLetters.PLAYER_ONE_LETTER;
+import static com.codingnomads.andy.tictactoe.players.PlayerLetters.PLAYER_TWO_LETTER;
+import static com.codingnomads.andy.tictactoe.ui.UiLogic.*;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -98,7 +100,7 @@ public class GameActivity extends AppCompatActivity {
         currentPlayer = gameStrategy.switchPlayer(currentPlayer);
         setText(gameStrategy.getNextPlayerText(currentPlayer));
 
-        if (checkWin(PLAYER_ONE_LETTER, gameBoard)) {
+        if (checkWin(gameBoard, PLAYER_ONE_LETTER)) {
             setText(gameStrategy.getPlayerOneWinText());
             disableButtons(buttons);
             return;
@@ -111,7 +113,7 @@ public class GameActivity extends AppCompatActivity {
         }
         gameBoard = gameStrategy.computerMove(gameBoard, PLAYER_TWO_LETTER, buttons, difficultyLevel);
 
-        if (checkWin(PLAYER_TWO_LETTER, gameBoard)) {
+        if (checkWin(gameBoard, PLAYER_TWO_LETTER)) {
             setText(gameStrategy.getPlayerTwoWinText());
             disableButtons(buttons);
             return;

@@ -3,11 +3,11 @@ package com.codingnomads.andy.tictactoe.activity.strategy;
 import android.content.Context;
 import android.widget.Button;
 
-import com.codingnomads.andy.tictactoe.Player;
+import com.codingnomads.andy.tictactoe.players.Player;
 import com.codingnomads.andy.tictactoe.R;
 
-import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_ONE_LETTER;
-import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_TWO_LETTER;
+import static com.codingnomads.andy.tictactoe.players.PlayerLetters.PLAYER_ONE_LETTER;
+import static com.codingnomads.andy.tictactoe.players.PlayerLetters.PLAYER_TWO_LETTER;
 
 public class TwoPlayerStrategy implements GameStrategy {
 
@@ -20,9 +20,9 @@ public class TwoPlayerStrategy implements GameStrategy {
     @Override
     public String getStartingText(Player player) {
         if (player == Player.PLAYER_ONE) {
-            return PLAYER_ONE_LETTER + context.getText(R.string.to_start_first);
+            return PLAYER_ONE_LETTER + context.getString(R.string.to_start_first);
         } else {
-            return PLAYER_TWO_LETTER + context.getText(R.string.to_start_first);
+            return PLAYER_TWO_LETTER + context.getString(R.string.to_start_first);
         }
 
     }
@@ -34,12 +34,12 @@ public class TwoPlayerStrategy implements GameStrategy {
 
     @Override
     public String getPlayerOneWinText() {
-        return PLAYER_ONE_LETTER + context.getText(R.string.two_player_wins_text);
+        return PLAYER_ONE_LETTER + context.getString(R.string.two_player_wins_text);
     }
 
     @Override
     public String getPlayerTwoWinText() {
-        return PLAYER_TWO_LETTER + context.getText(R.string.two_player_wins_text);
+        return PLAYER_TWO_LETTER + context.getString(R.string.two_player_wins_text);
     }
 
     @Override
@@ -53,9 +53,9 @@ public class TwoPlayerStrategy implements GameStrategy {
     @Override
     public String getNextPlayerText(Player currentPlayer) {
         if (currentPlayer == Player.PLAYER_ONE) {
-            return PLAYER_ONE_LETTER + context.getText(R.string.to_play);
+            return PLAYER_ONE_LETTER + context.getString(R.string.to_play);
         } else {
-            return PLAYER_TWO_LETTER + context.getText(R.string.to_play);
+            return PLAYER_TWO_LETTER + context.getString(R.string.to_play);
         }
     }
 }
