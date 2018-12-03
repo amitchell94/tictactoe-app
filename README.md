@@ -13,7 +13,7 @@ $ git clone https://github.com/amitchell94/tictactoe-app.git
 
 ### Prerequisites
 
-For this application you will need a minimum of Android API level 28.
+For this application you will need a minimum of Android API level 16.
 
 ### Installing
 
@@ -21,7 +21,7 @@ After cloning the repository to your local machine, you can import the project i
 
 ## Deployment
 
-This application can be deployed by building the APK file and installing it on an Android phone or tablet a minimum of APi level 28.
+This application can be deployed by building the APK file and installing it on an Android phone or tablet a minimum of API level 16.
 
 ## Built With
 
