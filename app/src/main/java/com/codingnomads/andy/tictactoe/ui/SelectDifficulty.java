@@ -1,4 +1,4 @@
-package com.codingnomads.andy.tictactoe;
+package com.codingnomads.andy.tictactoe.ui;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -9,20 +9,19 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 
+import com.codingnomads.andy.tictactoe.game.GameMode;
+import com.codingnomads.andy.tictactoe.R;
 import com.codingnomads.andy.tictactoe.activity.GameActivity;
-import com.codingnomads.andy.tictactoe.activity.MenuActivity;
 
-import java.util.Arrays;
-
-public class SelectDificulty extends DialogFragment {
+public class SelectDifficulty extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        String[] options = {(String)getText(R.string.easy),
-                (String)getText(R.string.medium),
-                (String)getText(R.string.hard), };
+        String[] options = {getString(R.string.easy),
+                getString(R.string.medium),
+                getString(R.string.hard) };
 
         builder.setTitle("Select difficulty")
                 .setItems(options, new DialogInterface.OnClickListener() {

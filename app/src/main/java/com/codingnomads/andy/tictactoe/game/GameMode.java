@@ -1,4 +1,4 @@
-package com.codingnomads.andy.tictactoe;
+package com.codingnomads.andy.tictactoe.game;
 
 public enum GameMode {
     ONE_PLAYER,

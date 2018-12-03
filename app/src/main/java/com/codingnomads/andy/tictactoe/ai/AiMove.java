@@ -1,4 +1,4 @@
-package com.codingnomads.andy.tictactoe;
+package com.codingnomads.andy.tictactoe.ai;
 
 public class AiMove {
     private int firstIndex;

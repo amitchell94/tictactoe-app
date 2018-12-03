@@ -1,10 +1,11 @@
-package com.codingnomads.andy.tictactoe;
+package com.codingnomads.andy.tictactoe.ai;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_ONE_LETTER;
-import static com.codingnomads.andy.tictactoe.PlayerLetters.PLAYER_TWO_LETTER;
+import static com.codingnomads.andy.tictactoe.game.GameLogic.checkWin;
+import static com.codingnomads.andy.tictactoe.players.PlayerLetters.PLAYER_ONE_LETTER;
+import static com.codingnomads.andy.tictactoe.players.PlayerLetters.PLAYER_TWO_LETTER;
 
 public class AiDecisionMaker {
     public AiMove getBestMove(String[][] gameboard, String player) {
@@ -75,56 +76,5 @@ public class AiDecisionMaker {
             }
         }
         return potentialMoveList;
-    }
-    private boolean checkWin(String[][] gameBoard, String letter) {
-        boolean winsHorizontally = false;
-
-        //Check horizontal wins
-        for (int i = 0; i < gameBoard.length; i++) {
-            winsHorizontally = true;
-            for (int j = 0; j < gameBoard[i].length; j++) {
-                winsHorizontally = winsHorizontally && letter.equals(gameBoard[i][j]);
-            }
-            if (winsHorizontally) {
-                return true;
-            }
-        }
-
-        boolean winsVertically = false;
-
-        for (int i = 0; i < gameBoard.length; i++) {
-            winsVertically = true;
-            for (int j = 0; j < gameBoard[i].length; j++) {
-                winsVertically = winsVertically && letter.equals(gameBoard[j][i]);
-            }
-            if (winsVertically) {
-                return true;
-            }
-        }
-
-        boolean winsDiagonallyRight = true;
-
-        for (int i = 0; i < gameBoard.length; i++) {
-            winsDiagonallyRight = winsDiagonallyRight && letter.equals(gameBoard[i][i]);
-        }
-        if (winsDiagonallyRight) {
-            return true;
-        }
-
-        boolean winsDiagonallyLeft = true;
-
-        int indexColumn = gameBoard.length - 1;
-        int indexRow = 0;
-
-        while (indexColumn >= 0) {
-            winsDiagonallyLeft = winsDiagonallyLeft && letter.equals(gameBoard[indexRow][indexColumn]);
-            indexColumn--;
-            indexRow++;
-        }
-        if (winsDiagonallyLeft) {
-            return true;
-        }
-        return false;
-
     }
 }

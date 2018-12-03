@@ -29,14 +29,7 @@
 
             <Button
                 android:id="@+id/top_left"
-                android:onClick="userEntry"
-                android:height="100dp"
-                android:layout_width="@dimen/boardSquareWidth"
-                android:layout_height="@dimen/boardSquareHeight"
-                android:textSize="40dp"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:background="#BBBBBB"/>
+                style="@style/button_light"/>
 
             <Button
                 android:id="@+id/top_center"
@@ -75,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="newGame"
-            android:text="New Game"
+            android:text="@string/new_game"
             android:padding="25dp" />
 
     </LinearLayout>

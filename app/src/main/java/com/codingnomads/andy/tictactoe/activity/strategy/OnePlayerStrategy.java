@@ -3,15 +3,15 @@ package com.codingnomads.andy.tictactoe.activity.strategy;
 import android.content.Context;
 import android.widget.Button;
 
-import com.codingnomads.andy.tictactoe.AiDecisionMaker;
-import com.codingnomads.andy.tictactoe.AiMove;
-import com.codingnomads.andy.tictactoe.Player;
-import com.codingnomads.andy.tictactoe.PlayerLetters;
+import com.codingnomads.andy.tictactoe.ai.AiDecisionMaker;
+import com.codingnomads.andy.tictactoe.ai.AiMove;
+import com.codingnomads.andy.tictactoe.players.Player;
+import com.codingnomads.andy.tictactoe.players.PlayerLetters;
 import com.codingnomads.andy.tictactoe.R;
 
 import java.util.Random;
 
-import static com.codingnomads.andy.tictactoe.UiLogic.setButtonTexts;
+import static com.codingnomads.andy.tictactoe.ui.UiLogic.setButtonTexts;
 
 public class OnePlayerStrategy implements GameStrategy {
 
@@ -23,7 +23,7 @@ public class OnePlayerStrategy implements GameStrategy {
 
     @Override
     public String getStartingText(Player player) {
-        return (String)context.getText(R.string.starting_text);
+        return context.getString(R.string.starting_text);
     }
 
     @Override
@@ -67,12 +67,12 @@ public class OnePlayerStrategy implements GameStrategy {
 
     @Override
     public String getPlayerOneWinText() {
-        return (String)context.getText(R.string.player_wins_text);
+        return context.getString(R.string.player_wins_text);
     }
 
     @Override
     public String getPlayerTwoWinText() {
-        return (String)context.getText(R.string.player_loses_text);
+        return context.getString(R.string.player_loses_text);
     }
 
     @Override
@@ -82,6 +82,6 @@ public class OnePlayerStrategy implements GameStrategy {
 
     @Override
     public String getNextPlayerText(Player currentPlayer) {
-        return (String)context.getText(R.string.starting_text);
+        return context.getString(R.string.starting_text);
     }
 }
